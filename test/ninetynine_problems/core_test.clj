@@ -13,3 +13,10 @@
 
 ;; 04 - find the number of elements of a list
 (fact (no-in '(a b c d e) 0) => 5)
+
+;; 05 - reverse the contents of a list
+(fact (flip-it '(1 2 3)) => '(3 2 1))
+
+;; 06 - palindromes
+(fact (palindrome? '(a b b a)) => true)
+(fact (palindrome? '(a b c d)) => false)

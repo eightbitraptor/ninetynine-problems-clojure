@@ -15,9 +15,19 @@
     (first args)
     (element-at (rest args) (dec idx))))
 
-(defn no-in 
+(defn no-in
   ([args] (no-in args 0))
   ([args result]
    (if (empty? args)
      result
      (no-in (rest args) (inc result)))))
+
+(defn flip-it
+  ([args] (flip-it args '()))
+  ([args result]
+   (if (empty? args)
+     result
+     (flip-it (rest args) (cons (first args) result)))))
+
+(defn palindrome? [list]
+  (= (flip-it list) list))
