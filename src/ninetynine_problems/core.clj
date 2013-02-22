@@ -14,3 +14,10 @@
   (if (= 1 idx)
     (first args)
     (element-at (rest args) (dec idx))))
+
+(defn no-in 
+  ([args] (no-in args 0))
+  ([args result]
+   (if (empty? args)
+     result
+     (no-in (rest args) (inc result)))))

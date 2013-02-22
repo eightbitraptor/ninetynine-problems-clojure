@@ -10,3 +10,6 @@
 
 ;; 03 - find the nth element of a list
 (fact (element-at '(a b c d e f) 3) => 'c)
+
+;; 04 - find the number of elements of a list
+(fact (no-in '(a b c d e) 0) => 5)
