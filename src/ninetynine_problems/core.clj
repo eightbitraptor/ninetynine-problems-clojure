@@ -9,3 +9,8 @@
   (if (= 1 (count (rest args)))
     args
     (my-but-last (rest args))))
+
+(defn element-at [args idx]
+  (if (= 1 idx)
+    (first args)
+    (element-at (rest args) (dec idx))))

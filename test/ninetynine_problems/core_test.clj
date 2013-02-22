@@ -2,9 +2,11 @@
   (:use midje.sweet)
   (:use ninetynine-problems.core))
 
-;; 99 - find the last element
-(fact (my-last '(:A :B :C :D)) => :D)
+;; 01 - find the last element
+(fact (my-last '(a b c d)) => 'd)
 
-;; 98 - find the penultimate element
-(fact (my-but-last '(:A :B :C :D)) => '(:C :D))
+;; 02 - find the penultimate element
+(fact (my-but-last '(a b c d)) => '(c d))
 
+;; 03 - find the nth element of a list
+(fact (element-at '(a b c d e f) 3) => 'c)
