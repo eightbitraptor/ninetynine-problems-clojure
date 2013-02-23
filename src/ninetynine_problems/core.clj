@@ -31,3 +31,10 @@
 
 (defn palindrome? [list]
   (= (flip-it list) list))
+
+(defn my-flatten [args]
+  (cond 
+    (not (list? args)) (list args)
+    (empty? args) args
+    :else (concat (my-flatten (first args)) 
+                  (my-flatten (rest args)))))

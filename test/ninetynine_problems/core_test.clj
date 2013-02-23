@@ -20,3 +20,6 @@
 ;; 06 - palindromes
 (fact (palindrome? '(a b b a)) => true)
 (fact (palindrome? '(a b c d)) => false)
+
+;; 07 - flatten the nested list
+(fact (my-flatten '(a (b (c d) e))) => '(a b c d e))
