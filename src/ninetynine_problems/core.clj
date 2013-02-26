@@ -33,8 +33,19 @@
   (= (flip-it list) list))
 
 (defn my-flatten [args]
-  (cond 
+  (cond
     (not (list? args)) (list args)
     (empty? args) args
-    :else (concat (my-flatten (first args)) 
+    :else (concat (my-flatten (first args))
                   (my-flatten (rest args)))))
+
+(defn compress
+  ([args] (compress args '()))
+  ([args result]
+   (cond
+     (empty? args) result
+     (= (first args) (first (rest args))) (compress (rest args) result)
+     (not (= (first args) (first (rest args)))) 
+        (compress (rest args) 
+                  (concat result [(first args)])))))
+

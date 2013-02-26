@@ -23,3 +23,6 @@
 
 ;; 07 - flatten the nested list
 (fact (my-flatten '(a (b (c d) e))) => '(a b c d e))
+
+;; 08 - eliminate consecutive duplicates
+(fact (compress '(a a a b b c c c c d d d)) => '(a b c d))
