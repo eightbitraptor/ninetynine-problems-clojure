@@ -40,12 +40,12 @@
                   (my-flatten (rest args)))))
 
 (defn compress
-  ([args] (compress args '()))
+  ([args] (compress args []))
   ([args result]
    (cond
      (empty? args) result
      (= (first args) (first (rest args))) (compress (rest args) result)
      (not (= (first args) (first (rest args)))) 
         (compress (rest args) 
-                  (concat result [(first args)])))))
+                  (conj result (first args))))))
 
